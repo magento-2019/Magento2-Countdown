@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="ethangrant_flipclock" class="Ethangrant\Flipclock\Block\Widget\Clock">
+        <label translate="true">Flipclock</label>
+        <description translate="true">Countdown Widget</description>
+        <parameters>
+            <parameter name="message" xsi:type="text" required="false" visible="true">
+                <label translate="true">Message</label>
+            </parameter>
+            <parameter name="countdown_to" xsi:type="text" required="true" visible="true">
+                <label translate="true">Date to countdown to</label>
+                <description translate="true">Enter date in the following format 'MM-DD-YYYY'</description>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

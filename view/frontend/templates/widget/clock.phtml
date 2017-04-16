@@ -1,0 +1,26 @@
+<?php
+/** @var \Ethangrant\Flipclock\Block\Widget\Clock $block */
+?>
+
+<div class="ethangrant-flipclock">
+    <div class="message"><h1><?php echo $block->getData('message'); ?></h1></div>
+</div>
+<div class="clock"></div>
+
+<script type="text/javascript">
+    require(['jquery', 'flipclock'], function($){
+        $(document).ready(function($) {
+            var dateString = '<?php echo $block->getData('countdown_to'); ?>';
+
+            var date = new Date(dateString);
+            var now = new Date();
+            var diff = (date.getTime() / 1000) - (now.getTime() / 1000);
+
+            var clock = $('.clock').FlipClock(diff,{
+                clockFace: 'DailyCounter',
+                showSeconds: true,
+                countdown: true
+            });
+        });
+    });
+</script>
